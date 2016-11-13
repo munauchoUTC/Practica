@@ -7,9 +7,7 @@ import static play.data.Form.*;
 
 import com.avaje.ebean.Ebean;
 import com.avaje.ebean.Transaction;
-
 import views.html.Compus.*;
-
 import javax.inject.Inject;
 import javax.persistence.PersistenceException;
 

@@ -11,3 +11,13 @@ GET     /message                    controllers.AsyncController.message
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+#Computadoras Crud
+
+GET 	/compus/index				controllers.CompusController.index
+GET 	/compus/new				controllers.CompusController.create
+POST 	/compus/new				controllers.CompusController.save
+GET     /compus                   controllers.CompusController.list(p:Int ?= 0, s ?= "nombre", o ?= "asc", f ?= "")
+GET     /compus/:id               controllers.CompusController.edit(id:Long)
+POST    /compus/:id               controllers.CompusController.update(id:Long)
+POST    /compus/delete/:id        controllers.CompusController.delete(id:Long)

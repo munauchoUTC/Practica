@@ -1,0 +1,32 @@
+@(personaForm: Form[Compu])
+
+@import helper._
+@main("Crear nuevo compu"){
+	
+	@form(routes.CompusController.save()) {
+		<table>
+			<caption>Computadora</caption>
+			<thead>
+				<tr>
+					<th>Crear una computadora Nueva:</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Nombre:</td>
+					<td>
+						<input type="text" name='nombre' value="" placeholder="nombre" required>
+					</td>
+				</tr>
+				<tr>
+					<td>Descripción:</td>
+					<td><input type="text"  name='descripcion' value="" placeholder="descripcion" required></td>
+				</tr>
+				<tr>
+					<td><input type="submit" name="" value="Guardar"></td>
+				</tr>
+			</tbody>
+		</table>
+	}
+	
+}

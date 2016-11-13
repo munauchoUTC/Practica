@@ -1,0 +1,40 @@
+@import com.avaje.ebean._
+@(currentPage: PagedList[Compu])
+
+<a href="/compus/new" > <h3>Nuevo</h3></a>
+
+@if(currentPage.getTotalRowCount == 0) {
+        
+        <div class="well">
+            <em>No hay datos</em>
+        </div>
+        
+    } else {
+        
+        <table class="computers zebra-striped" border="2">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @for(compu <- currentPage.getList) {
+                    <tr>
+                        
+                        <td>
+                            @compu.nombre
+                        </td>
+                        <td>
+                            @compu.descripcion
+                        </td>
+                        <td><a href="@routes.CompusController.edit(compu.id)">Editar</a></td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+        
+    }

@@ -56,7 +56,7 @@ public class CompusController extends Controller{
 
     //redirige a la lista de datos de la tabla
     public Result GO_INDEX = Results.redirect(
-        routes.LibrosController.list(0, "nombre", "asc", "")
+        routes.CompusController.list(0, "nombre", "asc", "")
     );
 	
     public Result edit(Long id) {
